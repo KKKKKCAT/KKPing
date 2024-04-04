@@ -5,7 +5,6 @@
 | ![](https://raw.githubusercontent.com/KKKKKCAT/KKPing/main/code/img1.jpeg)  | ![](https://raw.githubusercontent.com/KKKKKCAT/KKPing/main/code/img2.jpeg) |
 | ------------- | ------------- |
 
-
 ## **VPings App:** https://t.me/+0PVqPVQyxB1jZWZl
 
 
