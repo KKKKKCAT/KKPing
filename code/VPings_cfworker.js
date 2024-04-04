@@ -249,58 +249,66 @@ const countries = [
 {'id': 244, 'name': 'Pitcairn', 'code': 'PN'}
 ];
 
+let cachedData = null;
+let lastUpdate = 0;
+
 addEventListener('fetch', event => {
-event.respondWith(handleRequest(event.request))
+    event.respondWith(handleRequest(event.request))
 })
 
 async function handleRequest(request) {
-  const json = {
-    "code": 0,
-    "message": "success",
-    "result": countries.map(country => ({
-      "id": country.id,
-      "name": country.name,
-      "tag": country.code,
-      "last_active": 1712226601,
-      "ipv4": "1.1.1.1",
-      "ipv6": "",
-      "valid_ip": "1.1.1.1",
-      "host": {
-        "Platform": "debian",
-        "PlatformVersion": "12.5",
-        "CPU": ["KKO.IM"],
-        "MemTotal": 1000000000,
-        "DiskTotal": 100000000000,
-        "SwapTotal": 0,
-        "Arch": "x86_64",
-        "Virtualization": "hyperv",
-        "BootTime": 1686031483,
-        "CountryCode": country.code,
-        "Version": "0.16.3"
-      },
-      "status": {
-        "CPU": 100.0,
-        "MemUsed": 1000000000,
-        "SwapUsed": 0,
-        "DiskUsed": 100000000000,
-        "NetInTransfer": 0,
-        "NetOutTransfer": 1024000000000,
-        "NetInSpeed": 10000,
-        "NetOutSpeed": 10000,
-        "Uptime": 1,
-        "Load1": 0.1,
-        "Load5": 0.1,
-        "Load15": 0.1,
-        "TcpConnCount": 0,
-        "UdpConnCount": 0,
-        "ProcessCount": 0
-      }
-    }))
-  };
+    const currentTime = Math.floor(Date.now() / 1000);
 
-return new Response(JSON.stringify(json), {
-  headers: {
-    'content-type': 'application/json;charset=UTF-8',
-  },
-});
+    if (!cachedData || currentTime - lastUpdate >= 900) {
+        cachedData = {
+            "code": 0,
+            "message": "success",
+            "result": countries.map(country => ({
+                "id": country.id,
+                "name": country.name,
+                "tag": country.code,
+                "last_active": currentTime,
+                "ipv4": "1.1.1.1",
+                "ipv6": "",
+                "valid_ip": "1.1.1.1",
+                "host": {
+                    "Platform": "debian",
+                    "PlatformVersion": "12.5",
+                    "CPU": ["KKO.IM"],
+                    "MemTotal": 1000000000,
+                    "DiskTotal": 100000000000,
+                    "SwapTotal": 0,
+                    "Arch": "x86_64",
+                    "Virtualization": "hyperv",
+                    "BootTime": 1686031483,
+                    "CountryCode": country.code,
+                    "Version": "0.16.3"
+                },
+                "status": {
+                    "CPU": 100.0,
+                    "MemUsed": 1000000000,
+                    "SwapUsed": 0,
+                    "DiskUsed": 100000000000,
+                    "NetInTransfer": 0,
+                    "NetOutTransfer": 1024000000000,
+                    "NetInSpeed": 10000,
+                    "NetOutSpeed": 10000,
+                    "Uptime": 1,
+                    "Load1": 0.1,
+                    "Load5": 0.1,
+                    "Load15": 0.1,
+                    "TcpConnCount": 0,
+                    "UdpConnCount": 0,
+                    "ProcessCount": 0
+                }
+            }))
+        };
+        lastUpdate = currentTime;
+    }
+
+    return new Response(JSON.stringify(cachedData), {
+        headers: {
+            'content-type': 'application/json;charset=UTF-8',
+        },
+    });
 }
