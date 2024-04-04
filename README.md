@@ -21,4 +21,4 @@ CF worker輸入代碼：
 https://github.com/KKKKKCAT/KKPing/blob/main/code/VPings_cfworker.js
 
 ---
-TG交流群組：@kkcatblog
+### TG交流群組：[https://t.me/kkcatblog](https://t.me/kkcatblog)
