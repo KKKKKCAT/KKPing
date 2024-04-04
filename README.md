@@ -20,3 +20,5 @@ p.s. 首次載入比較慢 有244個國家/地區需加載
 CF worker輸入代碼：
 https://github.com/KKKKKCAT/KKPing/blob/main/code/VPings_cfworker.js
 
+---
+TG交流群組：@kkcatblog
