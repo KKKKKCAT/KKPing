@@ -22,6 +22,11 @@ https://github.com/KKKKKCAT/KKPing/blob/main/code/VPings_cfworker.js
 
 ## 3.訂閱轉換計劃
 https://sub.kko.im
+```
+暫時已知問題：Uzbekistan,French,Belarus,Netherland無法配對旗emoji
+```
+
+
 
 ---
 ### TG交流群組：[https://t.me/kkcatblog](https://t.me/kkcatblog)
