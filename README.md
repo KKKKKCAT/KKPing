@@ -23,6 +23,9 @@ https://github.com/KKKKKCAT/KKPing/blob/main/code/VPings_cfworker.js
 ## 3.訂閱轉換計劃
 https://sub.kko.im
 ```
+測試網址：https://proxy.v2gh.com/https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub
+(來源：https://github.com/Pawdroid/Free-servers)
+
 暫時已知問題：Uzbekistan,French,Belarus,Netherland無法配對旗emoji
 ```
 
