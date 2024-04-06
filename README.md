@@ -26,6 +26,7 @@ https://sub.kko.im
 暫時已知問題：Uzbekistan,French,Belarus,Netherland無法配對旗emoji
 ```
 
+![](https://raw.githubusercontent.com/KKKKKCAT/KKPing/main/code/sub1.jpg)
 
 
 ---
